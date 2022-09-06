@@ -28,8 +28,13 @@ public class ProductoService implements IProductoService{
     }
 
     @Override
-    public void modificarProducto(Producto producto) {
-        repo.save(producto);
+    public void modificarProducto(Long id, Producto producto) {
+        Producto productoActual = repo.findById(id).orElse(null);
+        productoActual.setDescripcion(producto.getDescripcion());
+        productoActual.setNombre(producto.getNombre());
+        productoActual.setPrecio(producto.getPrecio());
+        productoActual.setCantidadEnStock(producto.getCantidadEnStock());
+        repo.save(productoActual);
     }
 
     @Override

@@ -8,6 +8,6 @@ public interface IProductoService {
     void guardarProducto(Producto producto);
     List<Producto> obtenerProductos();
     void eliminarProducto(Long id);
-    void modificarProducto(Producto producto);
+    void modificarProducto(Long id, Producto producto);
     Producto obtenerProductoPorId(Long id);
 }
