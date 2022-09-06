@@ -30,7 +30,7 @@ public class BazarController {
     }
 
     @PutMapping("/productos/editar/{id}")
-    public void modificarProducto(@PathVariable Long id, @RequestParam Producto productoModificado) {
+    public void modificarProducto(@PathVariable Long id, @RequestBody Producto productoModificado) {
         service.modificarProducto(id, productoModificado);
     }
 
