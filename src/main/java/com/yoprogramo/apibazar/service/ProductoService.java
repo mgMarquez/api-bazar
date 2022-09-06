@@ -14,26 +14,26 @@ public class ProductoService implements IProductoService{
 
     @Override
     public void guardarProducto(Producto producto) {
-
+        repo.save(producto);
     }
 
     @Override
     public List<Producto> obtenerProductos() {
-        return null;
+        return repo.findAll();
     }
 
     @Override
     public void eliminarProducto(Long id) {
-
+        repo.deleteById(id);
     }
 
     @Override
     public void modificarProducto(Producto producto) {
-
+        repo.save(producto);
     }
 
     @Override
     public Producto obtenerProductoPorId(Long id) {
-        return null;
+        return repo.findById(id).orElse(null);
     }
 }
